@@ -85,14 +85,20 @@ object cactus {
 	}
 	
 	method mover(){
-		//COMPLETAR
+//		if(position == dino.position()){
+//			position = position.stop()
+//		}
+		if (position.x() < 0){position = self.posicionInicial()}
+		else {position = position.left(1)}
 	}
 	
 	method chocar(){
-		//COMPLETAR
+		dino.morir()
+		self.detener()
 	}
     method detener(){
-		//COMPLETAR
+    	game.removeTickEvent("moverCactus")
+		game.schedule(2000, { game.stop() })
 	}
 }
 
