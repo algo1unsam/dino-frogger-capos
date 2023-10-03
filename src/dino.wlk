@@ -79,18 +79,24 @@ object cactus {
 	
 	method posicionInicial() = game.at(game.width()-1,suelo.position().y())
 
+	
 	method iniciar(){
 		position = self.posicionInicial()
 		game.onTick(velocidad,"moverCactus",{self.mover()})
 	}
 	
+	
 	method mover(){
-		//COMPLETAR
+    	position = position.left(1)
+    	if(self.position().x() < -1){
+			position = self.posicionInicial()
+    	}
 	}
 	
 	method chocar(){
 		//COMPLETAR
 	}
+	
     method detener(){
 		//COMPLETAR
 	}
