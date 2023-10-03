@@ -94,12 +94,12 @@ object cactus {
 	}
 	
 	method chocar(){
-		dino.morir()
-		self.detener()
+		juego.terminar()
 	}
 	
     method detener(){
     	game.removeTickEvent("moverCactus")
+    	
 		game.schedule(2000, { game.stop() })
 	}
 }
@@ -126,7 +126,7 @@ object dino {
 				self.subir()
 				estaSubiendo = true
 			})
-			game.schedule(velocidad*2,{
+			game.schedule(velocidad*3,{
 				self.bajar()
 				estaSubiendo = false
 			})	
